@@ -14,7 +14,7 @@ if (!isset($_SESSION['user_name'])) {
 }
 
 $query = $pdo->query("SELECT * FROM tasks ORDER BY id DESC");
-$tasks = $query->fetch();
+$tasks = $query->fetchALL();
 ?>
 
 <h2>Liste de vos tâches</h2>
@@ -22,7 +22,7 @@ $tasks = $query->fetch();
 
 <ul>
     <?php foreach ($tasks as $task): ?>
-        <li> - <?php echo htmlspecialchars($task['titre']) ?><a href="delete_task.php?id=<?php echo htmlspecialchars($task['id']) ?>">Supprimer</a></li>
+        <li> - <?php echo htmlspecialchars($task['title']) ?><a href="delete_task.php?id=<?php echo htmlspecialchars($task['id']) ?>">Supprimer</a></li>
     <?php endforeach; ?>
 </ul>
 

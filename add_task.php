@@ -10,15 +10,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = trim($_POST['title']);
 
         $result = $pdo->prepare("INSERT INTO tasks (title) VALUES (?)");
-        $result->execute();
-        header("Location: index.php");
+        $result->execute([$title]);
+        header("Location:tasks.php");
         exit();
    
 }
 ?>
 
 <h2>Ajouter une tâche</h2>
-<form action="addtask.php" method="POST">
+<form action="" method="POST">
     <input type="text" name="title" placeholder="Nouvelle tâche">
     <button type="submit">Ajouter</button>
 </form>
