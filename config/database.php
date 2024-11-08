@@ -3,7 +3,7 @@
 $host = 'localhost';
 $dbname = 'todolist';
 $user = 'root';
-$pass = '';
+$pass = ''; // retier le mot de passe sinon ca ne marche pas 
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);

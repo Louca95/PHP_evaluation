@@ -11,7 +11,7 @@
     <h1>Gestionnaire de tâches</h1>
     <?php if (isset($_SESSION['user_name'])): ?>
     <nav>
-        <a href="">Accueil</a>
+        <a href="">Accueil</a>  <!--retiré l'index pour ne pa redirigé --> 
         <a href="logout.php">Déconnexion <?php echo htmlspecialchars($_SESSION['user_name']); ?></a>
     <?php else: ?>
             <a href="index.php">Accueil</a>

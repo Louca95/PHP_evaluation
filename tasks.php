@@ -14,7 +14,7 @@ if (!isset($_SESSION['user_name'])) {
 }
 
 $query = $pdo->query("SELECT * FROM tasks ORDER BY id DESC");
-$tasks = $query->fetchALL();
+$tasks = $query->fetchALL(); //permet de tous fetch
 ?>
 
 <h2>Liste de vos tâches</h2>
